@@ -1,0 +1,522 @@
+/* ==========================================
+   GLAM REEBEL — PREGUNTAS FRECUENTES
+   Diseño elegante y responsivo
+========================================== */
+
+.faqContainer {
+    --pink: #FF0057;
+    --pink-dark: #D9004B;
+    --pink-light: #FFD6D9;
+    --pink-soft: #FFF3F6;
+    --gray: #687786;
+    --dark: #29232A;
+    --border: #F3D9E2;
+
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+    padding: 55px 22px 70px;
+
+    box-sizing: border-box;
+
+    color: var(--dark);
+    font-family: "Montserrat", sans-serif;
+}
+
+.faqContainer *,
+.faqContainer *::before,
+.faqContainer *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.faqHeader {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 48px 25px;
+    margin-bottom: 35px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #FFF5F7 0%,
+        #FFD6D9 100%
+    );
+
+    border: 1px solid #F3C3D0;
+    border-radius: 21px;
+
+    box-shadow:
+        0 8px 25px rgba(100, 40, 60, 0.045),
+        0 2px 6px rgba(255, 0, 87, 0.035);
+}
+
+/* Decoración del encabezado */
+
+.faqHeader::before {
+    content: "";
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -105px;
+    left: -65px;
+
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.faqHeader::after {
+    content: "";
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -65px;
+    bottom: -90px;
+
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+/* Icono */
+
+.headerIcon {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 17px;
+
+    color: var(--pink);
+    font-size: 38px;
+
+    filter: drop-shadow(0 4px 8px rgba(255, 0, 87, 0.12));
+}
+
+/* Título */
+
+.title {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 12px;
+
+    color: var(--pink);
+
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 850;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+/* Subtítulo */
+
+.subtitle {
+    position: relative;
+    z-index: 1;
+
+    max-width: 620px;
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   LISTADO DE PREGUNTAS
+========================================== */
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+    width: 100%;
+}
+
+/* ==========================================
+   TARJETA DE CADA PREGUNTA
+========================================== */
+
+.faqItem {
+    overflow: hidden;
+
+    width: 100%;
+
+    background: #FFFFFF;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: 0 4px 14px rgba(80, 35, 55, 0.035);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+/* Hover */
+
+.faqItem:hover {
+    border-color: #EFB5C8;
+
+    box-shadow: 0 6px 18px rgba(80, 35, 55, 0.055);
+}
+
+/* Pregunta abierta */
+
+.faqItem.active {
+    background: #FFFFFF;
+
+    border-color: #F0AFC4;
+
+    box-shadow:
+        0 7px 22px rgba(255, 0, 87, 0.075),
+        0 2px 6px rgba(80, 35, 55, 0.025);
+}
+
+/* ==========================================
+   BOTÓN DE LA PREGUNTA
+========================================== */
+
+.faqQuestion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 65px;
+
+    padding: 18px 22px;
+
+    color: var(--dark);
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 1.6;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+.faqQuestion:hover {
+    color: var(--pink);
+    background: #FFFAFC;
+}
+
+.faqQuestion:focus-visible {
+    outline: 3px solid rgba(255, 0, 87, 0.35);
+    outline-offset: -4px;
+}
+
+/* Texto de la pregunta */
+
+.faqQuestion span {
+    flex: 1;
+    min-width: 0;
+    padding-right: 12px;
+}
+
+/* Pregunta abierta */
+
+.faqItem.active .faqQuestion {
+    color: var(--pink);
+    background: #FFF7F9;
+}
+
+/* ==========================================
+   FLECHA
+========================================== */
+
+.chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 30px;
+    height: 30px;
+
+    color: var(--pink);
+    background: #FFF0F5;
+
+    border: 1px solid #FFD6E2;
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Flecha cuando está abierta */
+
+.faqItem.active .chevron {
+    color: #FFFFFF;
+    background: var(--pink);
+    border-color: var(--pink);
+
+    transform: rotate(180deg);
+}
+
+/* ==========================================
+   CONTENEDOR DE RESPUESTAS
+========================================== */
+
+.faqAnswerContainer {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    transition: grid-template-rows 0.3s ease;
+}
+
+.faqItem.active .faqAnswerContainer {
+    grid-template-rows: 1fr;
+}
+
+/* ==========================================
+   CONTENIDO DE LAS RESPUESTAS
+========================================== */
+
+.faqAnswer {
+    min-height: 0;
+    overflow: hidden;
+
+    padding: 0 22px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.85;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.25s ease,
+        padding 0.3s ease;
+}
+
+.faqItem.active .faqAnswer {
+    padding: 0 22px 20px;
+    opacity: 1;
+}
+
+/* Párrafos normales */
+
+.faqAnswer p {
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* Separación entre varios párrafos */
+
+.faqAnswer p + p {
+    margin-top: 12px;
+}
+
+/* Textos destacados */
+
+.faqAnswer strong {
+    color: var(--pink-dark);
+    font-weight: 800;
+}
+
+/* ==========================================
+   RESPONSIVE — TABLETAS
+========================================== */
+
+@media (max-width: 768px) {
+    .faqContainer {
+        padding: 38px 18px 55px;
+    }
+
+    .faqHeader {
+        padding: 38px 22px;
+        margin-bottom: 27px;
+
+        border-radius: 18px;
+    }
+
+    .headerIcon {
+        font-size: 33px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .faqList {
+        gap: 11px;
+    }
+
+    .faqQuestion {
+        min-height: 60px;
+        padding: 16px 18px;
+        font-size: 13px;
+    }
+
+    .faqAnswer {
+        padding-right: 18px;
+        padding-left: 18px;
+        font-size: 12px;
+    }
+
+    .faqItem.active .faqAnswer {
+        padding: 0 18px 18px;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE — CELULARES
+========================================== */
+
+@media (max-width: 480px) {
+    .faqContainer {
+        padding: 28px 13px 42px;
+    }
+
+    .faqHeader {
+        padding: 32px 17px;
+        margin-bottom: 23px;
+
+        border-radius: 16px;
+    }
+
+    .headerIcon {
+        margin-bottom: 13px;
+        font-size: 30px;
+    }
+
+    .title {
+        font-size: 1.7rem;
+        line-height: 1.3;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .faqList {
+        gap: 10px;
+    }
+
+    .faqItem {
+        border-radius: 12px;
+    }
+
+    .faqQuestion {
+        min-height: 57px;
+        padding: 14px 13px;
+
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .faqQuestion span {
+        padding-right: 8px;
+    }
+
+    .chevron {
+        width: 27px;
+        height: 27px;
+        font-size: 10px;
+    }
+
+    .faqAnswer {
+        padding-right: 13px;
+        padding-left: 13px;
+
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .faqItem.active .faqAnswer {
+        padding: 0 13px 17px;
+    }
+
+    .faqAnswer p {
+        font-size: 12px;
+    }
+}
+
+/* ==========================================
+   TELÉFONOS PEQUEÑOS
+========================================== */
+
+@media (max-width: 360px) {
+    .faqContainer {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .faqHeader {
+        padding: 27px 13px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .faqQuestion {
+        padding: 13px 11px;
+        font-size: 11px;
+    }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .faqItem,
+    .faqQuestion,
+    .chevron,
+    .faqAnswerContainer,
+    .faqAnswer {
+        transition: none;
+    }
+}

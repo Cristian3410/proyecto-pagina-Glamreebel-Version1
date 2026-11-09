@@ -1,0 +1,304 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.titles h1 {
+  font-size: 26px;
+  color: #ff1867;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.titles p {
+  font-size: 12px;
+  color: #ff1867;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.noProducts {
+  text-align: center;
+  font-size: 15px;
+  color: #666;
+  margin-top: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); 
+  gap: 16px; /* Igualado al gap de Top Sales */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .grid { 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 16px;
+  }
+}
+
+.cardLinkImg,
+.cardLinkText {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Propiedades idénticas a Top Sales */
+.CardContainer {
+  border: 2px solid #ffd1dc;
+  border-radius: 16px;
+  padding: 14px; /* Sincronizado con Top Sales */
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 380px; /* Altura exacta igual a Top Sales */
+}
+
+.CardContainer:hover {
+  border-color: #ff1867;
+  box-shadow: 0 8px 25px rgba(255, 20, 147, 0.18);
+  transform: translateY(-4px); /* Efecto hover unificado */
+}
+
+.CardImgWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.CardImg {
+  width: 100%;
+  height: 200px; /* Altura de imagen igual a Top Sales */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  background-color: #ffffff; /* Fondo sutil igualado */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.imagenBox {
+  max-height: 185px; /* Tamaño unificado */
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.CardContainer:hover .imagenBox {
+  transform: scale(1.05);
+}
+
+/* Botones de flechas personalizados (si tu catálogo los usa en el slider interno de la tarjeta) */
+.prevArrow,
+.nextArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ffd1dc;
+  color: #ff1867;
+  font-size: 11px;
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.prevArrow:hover,
+.nextArrow:hover {
+  background-color: #ff1867;
+  color: #ffffff;
+  border-color: #ff1867;
+}
+
+.prevArrow {
+  left: -2px;
+}
+
+.nextArrow {
+  right: -2px;
+}
+
+/* Indicadores de puntos (Dots) */
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: #ffd1dc;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.activeDot {
+  background-color: #ff1867;
+  width: 12px;
+  border-radius: 4px;
+}
+
+/* Textos unificados exactamente con las fuentes y tamaños de Top Sales */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  gap: 4px; /* Espaciado interno consistente */
+}
+
+.productBrand {
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+}
+
+.productName {
+  font-size: 12px;
+  color: #222;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+  height: 32px; /* Altura fija para alinear títulos de 1 o 2 líneas perfectamente */
+  margin-bottom: 0;
+}
+
+.productPrice {
+  font-size: 13px;
+  color: #ff1867;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+.titleBrandLogo {
+  background-color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid #f695b7;
+  max-height: 80px;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.colorCirclesContainer {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  margin: 6px 0;
+}
+
+.colorCircle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  padding: 0;
+}
+
+.colorCircle:hover {
+  transform: scale(1.2);
+  border-color: #ff1867;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 28px auto 12px;
+  color: #444;
+  font-size: 14px;
+}
+
+.pagination button {
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid #ff1867;
+  border-radius: 22px;
+  background: #fff;
+  color: #ff1867;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #ff1867;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  border-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .pagination button {
+    min-height: 40px;
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: 1fr; 
+  }
+}

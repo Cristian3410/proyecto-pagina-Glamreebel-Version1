@@ -1,0 +1,352 @@
+/* =========================================
+   CONTENEDOR GENERAL DE PAGOS
+   ========================================= */
+
+.payPage {
+    min-height: 75vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 20px;
+
+    background: #FFF7F9;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   TARJETA PRINCIPAL
+   ========================================= */
+
+.payCard {
+    width: 100%;
+    max-width: 570px;
+    padding: 42px 38px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    background: #FFFFFF;
+    border: 1px solid #F8DCE5;
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 35px rgba(110, 35, 65, 0.07),
+        0 3px 10px rgba(110, 35, 65, 0.03);
+
+    animation: payCardAppear 0.5s ease;
+}
+
+/* =========================================
+   ICONO DEL ESTADO
+   ========================================= */
+
+.statusIcon {
+    width: 82px;
+    height: 82px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 35px;
+}
+
+.pendingIcon {
+    color: #D18A18;
+    background: #FFF5DF;
+    border: 1px solid #F8E2B5;
+}
+
+/* =========================================
+   ETIQUETA DEL ESTADO
+   ========================================= */
+
+.statusLabel {
+    padding: 7px 15px;
+    margin-bottom: 15px;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.pendingLabel {
+    color: #A76509;
+    background: #FFF5DF;
+}
+
+/* =========================================
+   TÍTULO Y DESCRIPCIÓN
+   ========================================= */
+
+.payTitle {
+    margin: 0 0 13px;
+
+    color: #29232A;
+
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.payDescription {
+    max-width: 450px;
+    margin: 0 0 25px;
+
+    color: #687786;
+
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+/* =========================================
+   NÚMERO DE PEDIDO
+   ========================================= */
+
+.orderBox {
+    width: 100%;
+    padding: 17px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    background: #FFF7F9;
+    border: 1px dashed #F2B7CA;
+    border-radius: 13px;
+
+    box-sizing: border-box;
+}
+
+.orderLabel {
+    color: #687786;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.orderNumber {
+    color: #FF0057;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   MENSAJE INFORMATIVO
+   ========================================= */
+
+.infoBox {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    margin: 20px 0 25px;
+    padding: 16px;
+
+    box-sizing: border-box;
+    border-radius: 12px;
+
+    text-align: left;
+}
+
+.pendingInfo {
+    color: #805B24;
+    background: #FFFAF0;
+    border: 1px solid #F5E5C5;
+}
+
+.infoIcon {
+    flex-shrink: 0;
+    margin-top: 3px;
+    font-size: 17px;
+    color: #D18A18;
+}
+
+.infoBox p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   BOTÓN PRINCIPAL
+   ========================================= */
+
+.primaryButton {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #FF0057, #E60050);
+
+    border: none;
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 14px rgba(255, 0, 87, 0.19);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.primaryButton:hover {
+    background: linear-gradient(135deg, #E60050, #C90045);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 0, 87, 0.26);
+}
+
+.primaryButton:active {
+    transform: scale(0.98);
+}
+
+.primaryButton:focus-visible {
+    outline: 3px solid #FFAAC6;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   MENSAJE INFERIOR
+   ========================================= */
+
+.footerMessage {
+    margin: 22px 0 0;
+
+    color: #92909A;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* =========================================
+   ANIMACIÓN
+   ========================================= */
+
+@keyframes payCardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 600px) {
+    .payPage {
+        min-height: 70vh;
+        padding: 30px 15px;
+    }
+
+    .payCard {
+        padding: 32px 22px;
+        border-radius: 18px;
+    }
+
+    .statusIcon {
+        width: 70px;
+        height: 70px;
+        font-size: 29px;
+    }
+
+    .payTitle {
+        font-size: 22px;
+    }
+
+    .payDescription {
+        font-size: 13px;
+    }
+
+    .orderNumber {
+        font-size: 21px;
+    }
+
+    .infoBox {
+        padding: 13px;
+    }
+
+    .infoBox p {
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .payCard {
+        animation: none;
+    }
+
+    .primaryButton {
+        transition: none;
+    }
+}
+
+/* Ajustes de información para pago rechazado */
+.rejectedInfo .infoIcon {
+    color: #D13B4B;
+}
+
+.rejectedInfo strong {
+    color: #B42332;
+}
+
+/* =========================================
+   PAGO EXITOSO
+   ========================================= */
+
+.successIcon {
+    color: #15965A;
+    background: #EAF9F0;
+    border: 1px solid #BCE8CB;
+}
+
+.successLabel {
+    color: #187544;
+    background: #EAF9F0;
+}
+
+.successInfo {
+    color: #246341;
+    background: #F0FBF4;
+    border: 1px solid #C9EBD5;
+}
+
+.successInfo .infoIcon {
+    color: #15965A;
+}
+
+.successInfo strong {
+    color: #187544;
+}

@@ -1,0 +1,366 @@
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  aspect-ratio: 16 / 8.2; 
+  background-color: #ffffff;
+}
+
+/* Configuración de las diapositivas para el efecto fade */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; 
+  visibility: hidden; 
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1; 
+  visibility: visible;
+  position: relative; 
+  z-index: 2;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+  object-position: center; 
+  display: block;
+  transition: transform 0.8s ease-out;
+  transform: scale(1.03);
+}
+
+.slide.active .productImage {
+  transform: scale(1);
+}
+
+.buyButton {
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  background-color: #fed6d7;
+  color: #ff1867;
+  border: 1.5px solid #ff1867;
+  padding: 0.75rem 2.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.buyButton:hover {
+  background-color: #ffffff;
+  color: #831843;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.buyButtonSlide2 {
+  position: absolute;
+  bottom: 12%;               
+  left: 70%;                 
+  transform: translateX(-50%); 
+  background-color: #ff1867; 
+  color: #ffffff;
+  border: 1.5px solid #ff1867;
+  padding: 0.8rem 1.5rem;    
+  width: 44%;                
+  border-radius: 50px;       
+  font-size: 1.5rem;         
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-align: center;        
+  box-shadow: 0 4px 15px rgba(255, 24, 103, 0.4);
+  transition: all 0.3s ease;
+  white-space: nowrap;       
+  z-index: 5;
+}
+
+.buyButtonSlide2:hover {
+  background-color: #e01257;
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 24, 103, 0.6);
+}
+
+/* Flechas de navegación */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: #000000;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 2rem; }
+.next { right: 2rem; }
+
+/* Contador de páginas */
+.slideCounter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2.5rem;
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 10;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 1024px) {
+  .buyButtonSlide2 {
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselContainer {
+    aspect-ratio: 16 / 9; 
+  }
+
+  .buyButton {
+    padding: 0.5rem 1.4rem;
+    font-size: 0.75rem;
+    bottom: 12%;
+    left: 8%;
+  }
+
+  .buyButtonSlide2 {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.8rem;
+    width: 48%;
+    bottom: 10%;
+    letter-spacing: 0.05em;
+  }
+
+  /* Flechas visibles y adaptadas para móviles */
+  .arrow {
+    display: flex; 
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
+    background: rgba(0, 0, 0, 0.4); /* Un poco más visibles en pantallas pequeñas */
+  }
+
+  .prev { left: 0.5rem; }
+  .next { right: 0.5rem; }
+
+  .slideCounter {
+    left: 1rem;
+    bottom: 1rem;
+    font-size: 0.65rem;
+  }
+}
+
+
+
+.buyButtonCombo:hover {
+  background-color: #e01257;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 24, 103, 0.6);
+}
+
+
+
+
+.buyButtonCombo {
+  position: absolute;
+  bottom: 12%;              
+  left: 27%;                 
+  transform: translateX(-50%); 
+  background-color: #ff1867; 
+  color: #ffffff;
+  border: 1.5px solid #ff1867;
+  padding: 0.8rem 6rem;     
+  width: auto;              
+  border-radius: 50px;      
+  font-size: 1.5rem;        
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-align: center;       
+  box-shadow: 0 4px 15px rgba(255, 24, 103, 0.4);
+  transition: all 0.3s ease;
+  white-space: nowrap;      
+  z-index: 5;
+  cursor: pointer;
+}
+
+.buyButtonCombo:hover {
+  background-color: #e01257;
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 24, 103, 0.6);
+}
+
+/* --- ADAPTACIÓN RESPONSIVA PARA TABLETS Y CELULARES --- */
+
+@media (max-width: 1024px) {
+  .buyButtonCombo {
+    font-size: 1.1rem;
+    padding: 0.7rem 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .buyButtonCombo {
+    font-size: 0.85rem;
+    padding: 0.5rem 1.5rem;
+    bottom: 10%;
+    left: 28%; 
+    letter-spacing: 0.05em;
+    border-width: 1px;
+  }
+
+  
+
+  .carouselContainer{
+    aspect-ratio: 6 / 3;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .productImage {
+    object-fit: cover; 
+    object-position: center;
+  }
+
+  .buyButton {
+    position: absolute;
+    bottom: 8%;              /* Más abajo en la tarjeta */
+    left: 5%;                /* Más hacia la izquierda */
+    transform: none;         /* Sin efectos de movimiento */
+    margin-left: 0;          /* Quitamos el centrado anterior */
+    
+    background-color: rgba(254, 214, 215, 0.45); /* Fondo rosado transparente */
+    color: #ff1867;
+    border: 1.5px solid #ff1867;
+    
+    padding: 0.4rem 1.2rem;  /* Más pequeño y compacto */
+    font-size: 0.75rem;      /* Letra más pequeña */
+    width: auto;             /* Ancho automático según el texto */
+    height: auto;
+    text-align: center;
+    box-sizing: border-box;
+    white-space: nowrap;
+    z-index: 5;
+  }
+}
+
+
+/* =========================================
+   BOTÓN DESCÚBRELO YA - SEGUNDO BANNER
+   ========================================= */
+
+.discoverSlide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.discoverButton {
+    position: absolute;
+    left: 70%;
+    bottom: 8%;
+
+    transform: translateX(-50%);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 38px;
+
+    color: #FFFFFF;
+    background: #FF0057;
+
+    border: 2px solid #FF0057;
+    border-radius: 40px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    box-shadow: 0 6px 18px rgba(255, 0, 87, 0.25);
+
+    z-index: 10;
+
+    transition: all 0.25s ease;
+}
+
+.discoverButton:hover {
+    color: #FF0057;
+    background: #FFFFFF;
+    border-color: #FF0057;
+
+    transform: translateX(-50%) translateY(-3px);
+
+    box-shadow: 0 9px 22px rgba(255, 0, 87, 0.3);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .discoverButton {
+        left: 70%;
+        bottom: 7%;
+        padding: 10px 19px;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 400px) {
+    .discoverButton {
+        padding: 8px 14px;
+        font-size: 10px;
+    }
+}

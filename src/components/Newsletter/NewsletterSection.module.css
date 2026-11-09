@@ -1,0 +1,512 @@
+
+/* ==========================================
+   GLAM REEBEL — GALERÍA PUBLICITARIA
+   Diseño premium responsivo
+========================================== */
+
+.newsletterSection {
+    --pink: #FF0057;
+    --pink-dark: #D9004B;
+    --pink-light: #FFD6D9;
+    --pink-soft: #FFF3F6;
+    --gray: #687786;
+    --dark: #29232A;
+    --white: #FFFFFF;
+
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: clamp(28px, 3.5vw, 48px) clamp(12px, 2.5vw, 32px);
+
+    overflow: hidden;
+
+    background: #FFFFFF;
+    color: var(--dark);
+    font-family: "Montserrat", sans-serif;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+========================================== */
+
+.newsletterCard {
+    width: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   CUADRÍCULA
+========================================== */
+
+.photoGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: clamp(10px, 1.3vw, 18px);
+
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+.photoCard {
+    position: relative;
+    display: block;
+
+    min-width: 0;
+    aspect-ratio: 4 / 4.6;
+
+    overflow: hidden;
+    isolation: isolate;
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+
+    border: 1px solid #F0C5D2;
+    border-radius: 17px;
+
+    box-shadow:
+        0 5px 17px rgba(70, 35, 50, 0.07),
+        0 2px 5px rgba(255, 0, 87, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* ==========================================
+   IMÁGENES
+========================================== */
+
+.photoImg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.4s ease;
+}
+
+/* ==========================================
+   PRIMERA TARJETA — PROMOCIÓN
+========================================== */
+
+.featuredCard {
+    border-color: #F0AFC4;
+}
+
+/* ==========================================
+   PANEL PROMOCIONAL
+========================================== */
+
+.overlayContent {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding: clamp(15px, 1.7vw, 25px);
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 249, 251, 0.98),
+        rgba(255, 214, 217, 0.97)
+    );
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* ==========================================
+   ETIQUETA PROMOCIONAL
+========================================== */
+
+.promoTag {
+    display: inline-block;
+
+    margin-bottom: 12px;
+    padding: 7px 11px;
+
+    color: #FFFFFF;
+    background: var(--pink);
+
+    border-radius: 30px;
+
+    font-size: clamp(0.58rem, 0.75vw, 0.72rem);
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   TÍTULO PROMOCIONAL
+========================================== */
+
+.promoTitle {
+    margin: 0 0 12px;
+
+    color: var(--dark);
+
+    font-size: clamp(0.95rem, 1.35vw, 1.35rem);
+    font-weight: 850;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   DESCRIPCIÓN
+========================================== */
+
+.promoDescription {
+    margin: 0 0 20px;
+
+    color: var(--gray);
+
+    font-size: clamp(0.72rem, 0.9vw, 0.86rem);
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   BOTÓN PROMOCIONAL
+========================================== */
+
+.promoBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 19px;
+
+    color: #FFFFFF;
+    background: linear-gradient(
+        135deg,
+        #FF4387,
+        #E60050
+    );
+
+    border: 1px solid var(--pink);
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-decoration: none;
+
+    box-shadow: 0 5px 13px rgba(255, 0, 87, 0.18);
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.promoBtn:hover {
+    color: #FFFFFF;
+
+    background: linear-gradient(
+        135deg,
+        #F52570,
+        #C90045
+    );
+
+    border-color: var(--pink-dark);
+
+    box-shadow: 0 8px 18px rgba(255, 0, 87, 0.25);
+
+    transform: translateY(-3px);
+}
+
+.promoBtn:active {
+    transform: scale(0.97);
+}
+
+.promoBtn:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   HOVER DE ESCRITORIO
+========================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .photoCard:hover {
+        transform: translateY(-4px);
+
+        border-color: #F0AFC4;
+
+        box-shadow:
+            0 12px 27px rgba(70, 35, 50, 0.12),
+            0 4px 14px rgba(255, 0, 87, 0.08);
+    }
+
+    .photoCard:hover .photoImg {
+        transform: scale(1.045);
+        filter: brightness(1.035);
+    }
+
+    /* Mostrar promoción de la primera fotografía */
+
+    .featuredCard:hover .overlayContent,
+    .featuredCard:focus-within .overlayContent {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+/* Acceso por teclado */
+
+.featuredCard:focus-within .overlayContent {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   TABLETAS
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .newsletterSection {
+        padding: 32px 20px;
+    }
+
+    .photoGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .photoCard {
+        aspect-ratio: 4 / 4.5;
+        border-radius: 15px;
+    }
+
+    .overlayContent {
+        padding: 20px;
+    }
+
+    .promoTitle {
+        font-size: clamp(1rem, 2.2vw, 1.4rem);
+    }
+
+    .promoDescription {
+        font-size: 0.85rem;
+    }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    .newsletterSection {
+        padding: 25px 12px 30px;
+    }
+
+    .photoGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .photoCard {
+        aspect-ratio: 4 / 4.8;
+        border-radius: 12px;
+    }
+
+    /*
+       La primera promoción aparece siempre
+       en la parte inferior de la imagen.
+    */
+
+    .overlayContent {
+        inset: auto 0 0;
+
+        width: 100%;
+        height: auto;
+        min-height: 0;
+
+        padding: 34px 11px 12px;
+
+        background: linear-gradient(
+            to top,
+            rgba(255, 0, 87, 0.96) 0%,
+            rgba(217, 0, 75, 0.88) 64%,
+            rgba(43, 16, 18, 0) 100%
+        );
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+
+    .promoTag {
+        margin-bottom: 7px;
+        padding: 5px 8px;
+
+        color: #FFFFFF;
+        background: rgba(255, 255, 255, 0.18);
+
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        font-size: 0.55rem;
+        letter-spacing: 0.04em;
+    }
+
+    .promoTitle {
+        margin-bottom: 7px;
+
+        color: #FFFFFF;
+
+        font-size: clamp(0.7rem, 3vw, 0.9rem);
+        line-height: 1.35;
+    }
+
+    .promoDescription {
+        margin-bottom: 11px;
+
+        color: #FFE7EF;
+
+        font-size: 0.65rem;
+        line-height: 1.5;
+    }
+
+    .promoBtn {
+        padding: 8px 11px;
+
+        color: var(--pink);
+        background: #FFFFFF;
+
+        border: 1px solid #FFFFFF;
+        border-radius: 7px;
+
+        font-size: 0.6rem;
+
+        box-shadow: none;
+    }
+
+    .promoBtn:hover {
+        color: var(--pink-dark);
+        background: #FFF0F5;
+        border-color: #FFF0F5;
+        transform: none;
+    }
+
+    /* Evitar movimientos involuntarios en pantallas táctiles */
+
+    .photoCard:hover {
+        transform: none;
+    }
+
+    .photoCard:hover .photoImg {
+        transform: none;
+    }
+}
+
+/* ==========================================
+   TELÉFONOS PEQUEÑOS
+========================================== */
+
+@media (max-width: 380px) {
+
+    .newsletterSection {
+        padding: 21px 9px 26px;
+    }
+
+    .photoGrid {
+        gap: 8px;
+    }
+
+    .photoCard {
+        border-radius: 10px;
+    }
+
+    .overlayContent {
+        padding: 30px 8px 9px;
+    }
+
+    .promoTag {
+        margin-bottom: 6px;
+        padding: 4px 7px;
+        font-size: 0.49rem;
+    }
+
+    .promoTitle {
+        margin-bottom: 5px;
+        font-size: 0.67rem;
+    }
+
+    .promoDescription {
+        margin-bottom: 8px;
+        font-size: 0.58rem;
+    }
+
+    .promoBtn {
+        padding: 7px 9px;
+        font-size: 0.54rem;
+    }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .photoCard,
+    .photoImg,
+    .overlayContent,
+    .promoBtn {
+        transition: none;
+    }
+
+    .photoCard:hover,
+    .photoCard:hover .photoImg,
+    .promoBtn:hover {
+        transform: none;
+    }
+}

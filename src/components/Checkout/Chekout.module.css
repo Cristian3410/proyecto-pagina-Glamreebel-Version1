@@ -1,0 +1,146 @@
+.checkoutContainer {
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #ffd1dc;
+  box-shadow: 0 8px 25px rgba(255, 20, 147, 0.08);
+  font-family: inherit;
+}
+
+.checkoutContainer h2 {
+  font-size: 26px;
+  color: #ff1867;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.shippingSection {
+  margin-bottom: 25px;
+  background: #fffcfd;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #ffd1dc;
+}
+
+.shippingSection h4 {
+  font-size: 15px;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.gridTwoCols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+@media (max-width: 576px) {
+  .gridTwoCols {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputGroup {
+  margin-top: 10px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ffd1dc;
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: #ff1867;
+  box-shadow: 0 0 0 3px rgba(255, 24, 103, 0.15);
+}
+
+.productsSection {
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 16px;
+  border: 1px solid #ffd1dc;
+}
+
+.productsSection h4 {
+  font-size: 15px;
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.productRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  border-bottom: 1px solid #fce8ec;
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.productPrice {
+  color: #ff1867;
+  font-weight: bold;
+}
+
+.totalTitle {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+  text-align: right;
+  margin: 20px 0;
+}
+
+.payButton {
+  width: 100%;
+  padding: 14px;
+  background: #ff1867;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 20, 147, 0.25);
+  transition: all 0.3s ease;
+}
+
+.payButton:hover:not(:disabled) {
+  background: #e01258;
+  box-shadow: 0 6px 18px rgba(255, 20, 147, 0.35);
+}
+
+.payButton:disabled {
+  background: #f3dadc;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}

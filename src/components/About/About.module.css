@@ -1,0 +1,598 @@
+/* ==========================================
+   GLAM REEBEL — SOBRE NOSOTROS
+   Diseño elegante, rosa y profesional
+========================================== */
+
+.aboutContainer {
+    --pink: #FF0057;
+    --pink-dark: #D9004B;
+    --pink-light: #FFD6D9;
+    --pink-soft: #FFF3F6;
+    --gray: #687786;
+    --dark: #29232A;
+    --white: #FFFFFF;
+    --border: #F3D9E2;
+
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 25px 70px;
+
+    box-sizing: border-box;
+
+    color: var(--dark);
+    font-family: "Montserrat", sans-serif;
+}
+
+.aboutContainer *,
+.aboutContainer *::before,
+.aboutContainer *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   PRESENTACIÓN / HERO
+========================================== */
+
+.heroSection {
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+
+    margin-bottom: 42px;
+    padding: 65px 30px;
+
+    background: linear-gradient(
+        135deg,
+        #FFF5F7 0%,
+        #FFD6D9 100%
+    );
+
+    border: 1px solid #F3C3D0;
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(100, 40, 60, 0.045),
+        0 2px 6px rgba(255, 0, 87, 0.035);
+}
+
+/* Decoración suave del encabezado */
+
+.heroSection::before {
+    content: "";
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    top: -120px;
+    left: -80px;
+
+    background: rgba(255, 255, 255, 0.38);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.heroSection::after {
+    content: "";
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    right: -75px;
+    bottom: -105px;
+
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.title {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 16px;
+
+    color: var(--pink);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 850;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    position: relative;
+    z-index: 1;
+
+    max-width: 720px;
+    margin: 0 auto;
+
+    color: #687786;
+
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+/* ==========================================
+   HISTORIA / QUIÉNES SOMOS
+========================================== */
+
+.contentSection {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 42px;
+}
+
+.textContent {
+    position: relative;
+
+    width: 100%;
+    max-width: 900px;
+
+    padding: 42px 45px;
+
+    text-align: center;
+
+    background: #FFFFFF;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow: 0 7px 24px rgba(80, 35, 55, 0.045);
+}
+
+.textContent h2 {
+    position: relative;
+
+    margin: 0 0 25px;
+    padding-bottom: 17px;
+
+    color: var(--dark);
+
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 850;
+    letter-spacing: -0.4px;
+}
+
+/* Línea decorativa */
+
+.textContent h2::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    width: 65px;
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    background: var(--pink);
+    border-radius: 5px;
+}
+
+.textContent p {
+    margin: 0 0 18px;
+
+    color: #687786;
+
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 400;
+}
+
+.textContent p:last-child {
+    margin-bottom: 0;
+}
+
+.textContent strong {
+    color: var(--pink);
+    font-weight: 800;
+}
+
+/* ==========================================
+   TARJETAS DE BENEFICIOS
+========================================== */
+
+.valuesSection {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+    margin-bottom: 45px;
+}
+
+.card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+
+    padding: 32px 29px;
+
+    background: #FFFFFF;
+
+    border: 1px solid var(--border);
+    border-radius: 19px;
+
+    box-shadow: 0 6px 20px rgba(80, 35, 55, 0.045);
+
+    text-align: left;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Iconos */
+
+.cardIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 22px;
+
+    color: var(--pink);
+
+    background: #FFF0F5;
+
+    border: 1px solid #FFD6E2;
+    border-radius: 15px;
+
+    font-size: 25px;
+}
+
+.card h3 {
+    margin: 0 0 13px;
+
+    color: var(--dark);
+
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.card p {
+    margin: 0;
+
+    color: var(--gray);
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+/* Hover de las tarjetas */
+
+@media (hover: hover) and (pointer: fine) {
+    .card:hover {
+        transform: translateY(-5px);
+
+        border-color: #F0AFC4;
+
+        box-shadow:
+            0 12px 28px rgba(80, 35, 55, 0.075),
+            0 4px 13px rgba(255, 0, 87, 0.07);
+    }
+
+    .card:hover .cardIcon {
+        color: #FFFFFF;
+        background: var(--pink);
+        border-color: var(--pink);
+    }
+}
+
+.cardIcon {
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* ==========================================
+   UBICACIÓN Y TIENDA
+========================================== */
+
+.storeSection {
+    display: flex;
+    justify-content: center;
+}
+
+.storeCard {
+    position: relative;
+
+    width: 100%;
+    max-width: 950px;
+
+    padding: 42px 35px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #FFF2F6 0%,
+        #FFE3EB 100%
+    );
+
+    border: 1px solid #F0B8CA;
+    border-radius: 21px;
+
+    box-shadow: 0 9px 28px rgba(100, 40, 60, 0.055);
+}
+
+.storeCard h2 {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 13px;
+
+    color: var(--pink);
+
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 850;
+}
+
+.storeDesc {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 30px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   INFORMACIÓN DE LA TIENDA
+========================================== */
+
+.storeInfoGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 19px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #F2D6E0;
+    border-radius: 12px;
+
+    box-shadow: 0 3px 10px rgba(80, 35, 55, 0.035);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.infoItem:hover {
+    transform: translateY(-2px);
+    border-color: #F0AFC4;
+}
+
+.storeIcon {
+    flex-shrink: 0;
+
+    color: var(--pink);
+    font-size: 19px;
+}
+
+.infoItem span {
+    color: #687786;
+
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   TABLETAS
+========================================== */
+
+@media (max-width: 900px) {
+    .aboutContainer {
+        padding: 40px 22px 55px;
+    }
+
+    .valuesSection {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+    .card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .heroSection {
+        padding: 52px 25px;
+    }
+
+    .textContent {
+        padding: 35px 30px;
+    }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+    .aboutContainer {
+        padding: 28px 14px 42px;
+    }
+
+    .heroSection {
+        padding: 42px 20px;
+        margin-bottom: 25px;
+        border-radius: 17px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .contentSection {
+        margin-bottom: 25px;
+    }
+
+    .textContent {
+        padding: 28px 20px;
+        border-radius: 16px;
+    }
+
+    .textContent h2 {
+        font-size: 1.55rem;
+        margin-bottom: 20px;
+    }
+
+    .textContent p {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .valuesSection {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        margin-bottom: 25px;
+    }
+
+    .card:last-child {
+        grid-column: auto;
+    }
+
+    .card {
+        padding: 24px 22px;
+        border-radius: 15px;
+    }
+
+    .cardIcon {
+        width: 47px;
+        height: 47px;
+        margin-bottom: 16px;
+        font-size: 21px;
+        border-radius: 12px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 13px;
+        line-height: 1.75;
+    }
+
+    .storeCard {
+        padding: 30px 19px;
+        border-radius: 17px;
+    }
+
+    .storeCard h2 {
+        font-size: 1.55rem;
+    }
+
+    .storeDesc {
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
+
+    .storeInfoGrid {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 11px;
+    }
+
+    .infoItem {
+        justify-content: flex-start;
+        padding: 13px;
+        text-align: left;
+    }
+
+    .infoItem span {
+        font-size: 12px;
+    }
+}
+
+/* ==========================================
+   TELÉFONOS PEQUEÑOS
+========================================== */
+
+@media (max-width: 380px) {
+    .aboutContainer {
+        padding-right: 11px;
+        padding-left: 11px;
+    }
+
+    .heroSection {
+        padding: 35px 15px;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .textContent {
+        padding: 25px 16px;
+    }
+
+    .card {
+        padding: 21px 18px;
+    }
+
+    .storeCard {
+        padding: 27px 15px;
+    }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .cardIcon,
+    .infoItem {
+        transition: none;
+    }
+
+    .card:hover,
+    .infoItem:hover {
+        transform: none;
+    }
+}

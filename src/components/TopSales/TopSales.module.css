@@ -1,0 +1,671 @@
+
+/* ==========================================
+   TOP SALES — DISEÑO PREMIUM RESPONSIVO
+   Conserva los colores y el carrusel original
+========================================== */
+
+.container {
+    --pink: #ff1867;
+    --pink-light: #ffd1dc;
+    --wine: #2b1117;
+
+    width: 100%;
+    margin: 0;
+    padding: clamp(30px, 4vw, 48px) 0;
+    box-sizing: border-box;
+}
+
+.container *,
+.container *::before,
+.container *::after {
+    box-sizing: border-box;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+========================================== */
+
+.ContainerBox {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 clamp(14px, 2.2vw, 26px);
+}
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 26px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.titles h1 {
+    margin: 0 0 7px;
+
+    color: var(--pink);
+    font-size: clamp(20px, 2.2vw, 27px);
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.titles p {
+    margin: 0;
+
+    color: var(--pink);
+    font-size: clamp(10px, 1.1vw, 12px);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   INDICADOR DE DESLIZAMIENTO
+========================================== */
+
+.swipeHint {
+    display: none;
+}
+
+/* ==========================================
+   CARRUSEL
+========================================== */
+
+.carouselWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+}
+
+/* Pista horizontal */
+
+.carouselTrack {
+    display: flex;
+    align-items: stretch;
+
+    width: 100%;
+    min-width: 0;
+    gap: 16px;
+    padding: 12px 4px 22px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-left: 4px;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+}
+
+.carouselTrack::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==========================================
+   PRODUCTOS
+   Cuatro tarjetas en escritorio
+========================================== */
+
+.slideItemWrapper {
+    flex: 0 0 calc((100% - 48px) / 4);
+    min-width: 0;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+}
+
+.cardLink {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.cardLink:focus-visible {
+    outline: 2px solid var(--pink);
+    outline-offset: 4px;
+    border-radius: 17px;
+}
+
+/* ==========================================
+   TARJETA DE PRODUCTO
+========================================== */
+
+.CardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 100%;
+    min-height: 445px;
+    min-width: 0;
+    padding: 12px;
+
+    overflow: hidden;
+    background: #ffffff;
+
+    border: 1.5px solid var(--pink-light);
+    border-radius: 17px;
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.07),
+        0 1px 3px rgba(255, 24, 103, 0.035);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* ==========================================
+   IMAGEN DEL PRODUCTO
+========================================== */
+
+.CardImg {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 292px;
+    flex: 0 0 auto;
+    margin-bottom: 12px;
+    padding: 0;
+
+    overflow: hidden;
+
+   background: #ffffff;
+
+    border: 1px solid rgba(255, 209, 220, 0.6);
+    border-radius: 12px;
+}
+
+/* Fotografía completa y bien aprovechada */
+
+.imagenBox {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: none;
+    margin: 0 auto;
+    padding: 3px;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.3s ease;
+}
+
+/* Cuando no hay imagen */
+
+.imagePlaceholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+
+    background: #fff5f8;
+    color: #8b6672;
+
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   INFORMACIÓN DEL PRODUCTO
+========================================== */
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+    margin-top: auto;
+    gap: 5px;
+
+    text-align: center;
+}
+
+.brandText {
+    margin: 0;
+
+    color: #8a777e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.nameText {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    width: 100%;
+    min-height: 32px;
+    margin: 0;
+
+    overflow: hidden;
+    overflow-wrap: anywhere;
+
+    color: #292126;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.priceText {
+    margin: 3px 0 0;
+
+    color: var(--pink);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.1px;
+}
+
+/* ==========================================
+   HOVER DE ESCRITORIO
+========================================== */
+
+@media (hover: hover) and (pointer: fine) {
+    .CardContainer:hover {
+        transform: translateY(-5px);
+
+        border-color: var(--pink);
+
+        box-shadow:
+            0 12px 28px rgba(0, 0, 0, 0.1),
+            0 4px 14px rgba(255, 24, 103, 0.1);
+    }
+
+    .CardContainer:hover .imagenBox {
+        transform: scale(1.035);
+        filter: brightness(1.02);
+    }
+}
+
+/* ==========================================
+   TABLETAS
+========================================== */
+
+@media (max-width: 1024px) {
+    .ContainerBox {
+        padding: 0 18px;
+    }
+
+    .carouselTrack {
+        gap: 14px;
+    }
+
+    /* Tres productos visibles */
+
+    .slideItemWrapper {
+        flex-basis: calc((100% - 28px) / 3);
+    }
+
+    .CardContainer {
+        min-height: 420px;
+        padding: 11px;
+        border-radius: 15px;
+    }
+
+    .CardImg {
+        height: 260px;
+        margin-bottom: 11px;
+    }
+
+    .nameText {
+        font-size: 11.5px;
+    }
+
+    .priceText {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   TABLETAS PEQUEÑAS
+========================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 32px 0;
+    }
+
+    .ContainerBox {
+        padding: 0 16px;
+    }
+
+    .titles {
+        margin-bottom: 20px;
+    }
+
+    .titles h1 {
+        font-size: 21px;
+    }
+
+    .titles p {
+        font-size: 11px;
+    }
+
+    .carouselTrack {
+        gap: 12px;
+        padding: 8px 0 18px;
+        scroll-padding-left: 0;
+    }
+
+    /* Una tarjeta completa por vista */
+
+    .slideItemWrapper {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .swipeHint {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+
+        margin: 0 0 12px;
+        padding: 0 5px;
+
+        color: var(--pink);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.9px;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .swipeHint span {
+        display: inline-block;
+        flex-shrink: 0;
+
+        color: var(--pink);
+        font-size: 17px;
+
+        animation: swipeArrow 1.2s ease-in-out infinite;
+    }
+
+    .CardContainer {
+        min-height: 0;
+        height: 410px;
+        padding: 12px;
+        border-radius: 15px;
+    }
+
+    .CardImg {
+        height: 270px;
+        margin-bottom: 11px;
+    }
+
+    .imagenBox {
+        max-height: none;
+        padding: 2px;
+    }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 500px) {
+    .container {
+        padding: 27px 0;
+    }
+
+    .ContainerBox {
+        padding: 0 12px;
+    }
+
+    .titles {
+        margin-bottom: 18px;
+        padding: 0 5px;
+    }
+
+    .titles h1 {
+        font-size: 19px;
+        line-height: 1.35;
+        letter-spacing: 0.5px;
+    }
+
+    .titles p {
+        font-size: 10px;
+        line-height: 1.6;
+        letter-spacing: 0.25px;
+    }
+
+    .carouselTrack {
+        width: 100%;
+        gap: 12px;
+        padding: 7px 0 17px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+        scroll-snap-stop: always;
+        scroll-behavior: smooth;
+
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+    }
+
+    .slideItemWrapper {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        scroll-snap-align: start;
+    }
+
+    .CardContainer {
+        width: 100%;
+        height: 385px;
+        min-height: 0;
+        padding: 10px;
+
+        border-width: 1.5px;
+        border-radius: 13px;
+    }
+
+    /* La imagen ocupa la mayor parte de la tarjeta */
+
+    .CardImg {
+        height: 235px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .imagenBox {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: none;
+        padding: 2px;
+
+        object-fit: contain;
+    }
+
+    .swipeHint {
+        margin: 0 0 11px;
+        font-size: 9px;
+        letter-spacing: 0.6px;
+    }
+
+    .brandText {
+        font-size: 9px;
+    }
+
+    .nameText {
+        min-height: 30px;
+        font-size: 12px;
+    }
+
+    .priceText {
+        font-size: 14px;
+    }
+
+    /* No mantener elevaciones al tocar la pantalla */
+
+    .CardContainer:hover {
+        transform: none;
+    }
+
+    .CardContainer:hover .imagenBox {
+        transform: none;
+    }
+}
+
+/* ==========================================
+   CELULARES PEQUEÑOS
+========================================== */
+
+@media (max-width: 400px) {
+    .ContainerBox {
+        padding: 0 10px;
+    }
+
+    .titles {
+        padding: 0 4px;
+    }
+
+    .titles h1 {
+        font-size: 17px;
+        letter-spacing: 0.3px;
+    }
+
+    .titles p {
+        font-size: 9px;
+    }
+
+    .carouselTrack {
+        gap: 10px;
+        padding-top: 6px;
+    }
+
+    .slideItemWrapper {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .CardContainer {
+        height: 355px;
+        min-height: 0;
+        padding: 9px;
+        border-radius: 12px;
+    }
+
+    .CardImg {
+        height: 210px;
+        margin-bottom: 9px;
+        border-radius: 9px;
+    }
+
+    .imagenBox {
+        max-height: none;
+        padding: 1px;
+    }
+
+    .nameText {
+        min-height: 28px;
+        font-size: 11px;
+    }
+
+    .priceText {
+        font-size: 13px;
+    }
+
+    .swipeHint {
+        font-size: 8px;
+        letter-spacing: 0.4px;
+    }
+}
+
+/* ==========================================
+   ANIMACIÓN DE LA FLECHA
+========================================== */
+
+@keyframes swipeArrow {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .swipeHint span {
+        animation: none;
+    }
+
+    .carouselTrack {
+        scroll-behavior: auto;
+    }
+
+    .CardContainer,
+    .imagenBox {
+        transition: none;
+    }
+
+    .CardContainer:hover {
+        transform: none;
+    }
+}

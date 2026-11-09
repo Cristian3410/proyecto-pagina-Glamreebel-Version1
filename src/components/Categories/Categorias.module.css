@@ -1,0 +1,560 @@
+/* ==========================================
+   GLAM REEBEL — CATEGORÍAS VISUALES
+   Diseño premium y responsivo
+========================================== */
+
+.categoriesSection {
+    --wine: #2b1012;
+    --wine-light: #40181e;
+    --pink: #FF0057;
+    --pink-soft: #FFD6D9;
+    --white: #FFFFFF;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: clamp(30px, 4vw, 54px) clamp(15px, 3vw, 42px);
+    overflow: hidden;
+
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.categoriesSection *,
+.categoriesSection *::before,
+.categoriesSection *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.categoriesHeader {
+    margin: 0 auto 28px;
+}
+
+.categoriesEyebrow {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--pink);
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+}
+
+.categoriesMainTitle {
+    margin: 0;
+
+    color: var(--pink);
+    font-size: clamp(1.45rem, 2.6vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+}
+
+.categoriesMainTitle::after {
+    content: "";
+    display: block;
+
+    width: 42px;
+    height: 3px;
+    margin: 12px auto 0;
+
+    border-radius: 4px;
+    background: var(--pink);
+    box-shadow: 0 0 10px rgba(255, 0, 87, 0.18);
+}
+
+/* ==========================================
+   CUADRÍCULA
+========================================== */
+
+.categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(10px, 1.4vw, 19px);
+
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   TARJETAS — BORDES PREMIUM
+========================================== */
+
+.categoryCard {
+    position: relative;
+    display: block;
+
+    min-width: 0;
+    overflow: hidden;
+    isolation: isolate;
+
+    aspect-ratio: 4 / 5;
+
+    /* Borde exterior */
+    border: 1px solid #F0B8CA;
+    border-radius: 16px;
+
+    background: #FFFFFF;
+    text-decoration: none;
+
+    /* Sombra elegante */
+    box-shadow:
+        0 5px 15px rgba(43, 16, 18, 0.10),
+        0 2px 5px rgba(255, 0, 87, 0.04);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Marco interior blanco */
+
+.categoryCard::before {
+      content: "";
+    position: absolute;
+    inset: 7px;
+    z-index: 2;
+
+    border-radius: 10px;
+
+    pointer-events: none;
+    transition: border-color 0.3s ease;
+}
+
+/* ==========================================
+   IMAGEN PROTAGONISTA
+========================================== */
+
+.categoryImg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.4s ease;
+}
+
+/* ==========================================
+   CAPA INFERIOR
+========================================== */
+
+.categoryOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+
+    padding: 15px 13px;
+
+    background: linear-gradient(
+        to top,
+        rgba(35, 10, 16, 0.78) 0%,
+        rgba(35, 10, 16, 0.18) 20%,
+        transparent 42%
+    );
+
+    transition: background 0.3s ease;
+}
+
+/* ==========================================
+   NOMBRE DE CATEGORÍA
+========================================== */
+
+.categoryTitle {
+    min-width: 0;
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-size: clamp(0.75rem, 1.1vw, 0.98rem);
+    font-weight: 800;
+    letter-spacing: 0.075em;
+    line-height: 1.3;
+    text-align: left;
+
+    overflow-wrap: anywhere;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+    transition: color 0.3s ease;
+}
+
+/* ==========================================
+   FLECHA CSS
+========================================== */
+
+.categoryArrow {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 30px;
+
+    width: 30px;
+    height: 30px;
+
+    color: #FFFFFF;
+    background: var(--pink);
+
+    border: 1.5px solid var(--pink);
+    border-radius: 50%;
+
+    font-size: 0;
+    line-height: 0;
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    opacity: 0;
+    transform: translate(-5px, 5px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Punta de la flecha */
+
+.categoryArrow::before {
+    content: "";
+    position: absolute;
+
+    top: 7px;
+    right: 7px;
+
+    width: 8px;
+    height: 8px;
+
+    border-top: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+
+/* Cuerpo diagonal de la flecha */
+
+.categoryArrow::after {
+    content: "";
+    position: absolute;
+
+    top: 13px;
+    left: 7px;
+
+    width: 12px;
+    height: 2px;
+
+    background: #FFFFFF;
+    border-radius: 2px;
+
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+
+/* ==========================================
+   HOVER PREMIUM — ESCRITORIO
+========================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .categoryCard:hover {
+        transform: translateY(-5px);
+
+        border-color: var(--pink);
+
+        box-shadow:
+            0 12px 28px rgba(43, 16, 18, 0.18),
+            0 5px 16px rgba(255, 0, 87, 0.13);
+    }
+
+    .categoryCard:hover::before {
+        border-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .categoryCard:hover .categoryImg {
+        transform: scale(1.045);
+        filter: brightness(1.05);
+    }
+
+    .categoryCard:hover .categoryOverlay {
+        background: linear-gradient(
+            to top,
+            rgba(35, 10, 16, 0.88) 0%,
+            rgba(35, 10, 16, 0.15) 26%,
+            transparent 48%
+        );
+    }
+
+    .categoryCard:hover .categoryTitle {
+        color: var(--pink-soft);
+    }
+
+    .categoryCard:hover .categoryArrow {
+        opacity: 1;
+        transform: translate(0, 0);
+
+        background: var(--pink);
+        border-color: var(--pink);
+    }
+}
+
+/* ==========================================
+   ACCESIBILIDAD CON TECLADO
+========================================== */
+
+.categoryCard:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 4px;
+}
+
+.categoryCard:focus-visible .categoryArrow {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* ==========================================
+   TABLETAS
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .categoriesSection {
+        padding: 36px 22px 42px;
+    }
+
+    .categoriesGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .categoryCard {
+        aspect-ratio: 4 / 4.8;
+    }
+
+    .categoryOverlay {
+        padding: 12px 10px;
+    }
+
+    .categoryTitle {
+        font-size: 0.9rem;
+    }
+
+    .categoryArrow {
+        flex-basis: 27px;
+        width: 27px;
+        height: 27px;
+    }
+
+    .categoryArrow::before {
+        top: 6px;
+        right: 6px;
+
+        width: 7px;
+        height: 7px;
+    }
+
+    .categoryArrow::after {
+        top: 11px;
+        left: 6px;
+
+        width: 11px;
+    }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 640px) {
+
+    .categoriesSection {
+        padding: 28px 13px 32px;
+    }
+
+    .categoriesHeader {
+        margin-bottom: 21px;
+    }
+
+    .categoriesEyebrow {
+        font-size: 0.61rem;
+    }
+
+    .categoriesMainTitle {
+        font-size: 1.4rem;
+    }
+
+    .categoriesGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .categoryCard {
+        aspect-ratio: 4 / 4.7;
+        border-radius: 13px;
+    }
+
+    .categoryCard::before {
+        inset: 5px;
+        border-radius: 8px;
+    }
+
+    .categoryOverlay {
+        padding: 10px 9px;
+
+        background: linear-gradient(
+            to top,
+            rgba(35, 10, 16, 0.78) 0%,
+            rgba(35, 10, 16, 0.12) 25%,
+            transparent 45%
+        );
+    }
+
+    .categoryTitle {
+        font-size: clamp(0.72rem, 2.8vw, 0.86rem);
+        letter-spacing: 0.045em;
+    }
+
+    /* Flecha siempre visible en móviles */
+
+    .categoryArrow {
+        flex: 0 0 25px;
+
+        width: 25px;
+        height: 25px;
+
+        opacity: 1;
+        transform: none;
+
+        background: var(--pink);
+        border: 1.5px solid var(--pink);
+    }
+
+    .categoryArrow::before {
+        top: 5px;
+        right: 5px;
+
+        width: 7px;
+        height: 7px;
+    }
+
+    .categoryArrow::after {
+        top: 10px;
+        left: 5px;
+
+        width: 11px;
+        height: 2px;
+    }
+
+    .categoryCard:hover {
+        transform: none;
+    }
+
+    .categoryCard:hover .categoryImg {
+        transform: none;
+    }
+
+    .categoryCard:hover .categoryArrow {
+        background: var(--pink);
+        border-color: var(--pink);
+    }
+}
+
+/* ==========================================
+   TELÉFONOS PEQUEÑOS
+========================================== */
+
+@media (max-width: 380px) {
+
+    .categoriesSection {
+        padding: 25px 10px 28px;
+    }
+
+    .categoriesGrid {
+        gap: 8px;
+    }
+
+    .categoriesMainTitle {
+        font-size: 1.25rem;
+    }
+
+    .categoryCard {
+        aspect-ratio: 4 / 4.6;
+        border-radius: 11px;
+    }
+
+    .categoryCard::before {
+        inset: 4px;
+        border-radius: 7px;
+    }
+
+    .categoryOverlay {
+        padding: 9px 7px;
+    }
+
+    .categoryTitle {
+        font-size: 0.68rem;
+        letter-spacing: 0.025em;
+    }
+
+    .categoryArrow {
+        flex-basis: 22px;
+        width: 22px;
+        height: 22px;
+    }
+
+    .categoryArrow::before {
+        top: 4px;
+        right: 4px;
+
+        width: 7px;
+        height: 7px;
+    }
+
+    .categoryArrow::after {
+        top: 9px;
+        left: 4px;
+
+        width: 10px;
+        height: 2px;
+    }
+}
+
+/* ==========================================
+   REDUCIR ANIMACIONES
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .categoryCard,
+    .categoryImg,
+    .categoryOverlay,
+    .categoryTitle,
+    .categoryArrow {
+        transition: none;
+    }
+
+    .categoryCard:hover,
+    .categoryCard:hover .categoryImg {
+        transform: none;
+    }
+}

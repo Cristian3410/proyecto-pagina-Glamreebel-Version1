@@ -1,0 +1,1238 @@
+
+/* ============================================
+   GLAM REEBEL - NAVBAR PRINCIPAL
+   Archivo: NavBar.module.css
+   ============================================ */
+
+/* CONFIGURACIÓN GENERAL */
+
+:global(*) {
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    max-width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #FFD6D9;
+    font-family: "Montserrat", sans-serif;;
+}
+
+/* ============================================
+   BARRA SUPERIOR
+   ============================================ */
+
+.topBar {
+    min-height: 32px;
+    padding: 7px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#FFFFFF;
+     border-bottom: 1px solid #F7C3CC;
+    text-align: center;
+}
+
+.topBarText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   color: #FF0057;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+
+.mainNavContainer {
+    width: 100%;
+    padding: 0 24px;
+}
+
+.navContent {
+    width: 100%;
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+}
+
+.logo {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    text-decoration: none;
+    outline-offset: 4px;
+}
+
+.imgLogo {
+    display: block;
+    width: auto;
+    height: 55px;
+    max-width: 180px;
+    object-fit: contain;
+}
+
+/* ============================================
+   MENÚ DE ESCRITORIO
+   ============================================ */
+
+.desktopMenu {
+    display: none;
+}
+
+.desktopMenu a {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Menú normal de la tienda */
+
+.desktopMenu:not(:has(.adminNavButton)) {
+     color: #FF0057;
+}
+
+.desktopMenu:not(:has(.adminNavButton)) > a:not(.adminStoreButton) {
+    padding: 8px 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+  color: #FF0057;
+}
+
+.desktopMenu:not(:has(.adminNavButton)) > a:not(.adminStoreButton)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+  background: #FF0057;;
+    border-radius: 4px;
+    transition: width 0.25s ease;
+}
+
+.desktopMenu:not(:has(.adminNavButton)) > a:not(.adminStoreButton):hover {
+     color: #D9004B;
+}
+
+.desktopMenu:not(:has(.adminNavButton)) > a:not(.adminStoreButton):hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   BOTONES ADMINISTRATIVOS DE ESCRITORIO
+   ============================================ */
+
+.desktopMenu .adminNavButton {
+     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 46px;
+    padding: 11px 17px;
+
+    color: #687786;
+    background: #FFFFFF;
+
+    border: 1px solid #F3B9CB;
+    border-radius: 15px;
+
+    font-size: 13px;
+    font-weight: 750;
+    white-space: nowrap;
+    text-decoration: none;
+
+    box-shadow: 0 3px 9px rgba(120, 50, 75, 0.06);
+
+    transition: all 0.25s ease;
+}
+
+.desktopMenu .adminNavButton::after {
+    display: none;
+}
+
+.desktopMenu .adminNavButton:hover {
+     color: #FF0057;
+    background: #FFF0F4;
+    border-color: #FF8DB2;
+
+    box-shadow: 0 5px 14px rgba(255, 0, 87, 0.12);
+    transform: translateY(-2px);
+}
+
+.desktopMenu .adminNavButton:active {
+    transform: translateY(0) scale(0.97);
+}
+
+/* Botón de la sección actual */
+
+.desktopMenu .adminNavButtonActive {
+     color: #FFFFFF;
+    background: linear-gradient(135deg, #FF4387, #E60050);
+
+    border-color: #FF4387;
+
+    box-shadow: 0 5px 15px rgba(255, 0, 87, 0.2);
+}
+
+.desktopMenu .adminNavButtonActive:hover {
+  color: #FFFFFF;
+    background: linear-gradient(135deg, #F52570, #C90045);
+    border-color: #E60050;
+}
+
+.adminNavIcon {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: transform 0.25s ease;
+}
+
+.adminNavButton:hover .adminNavIcon {
+    transform: scale(1.15) rotate(-4deg);
+}
+
+.adminActiveDot {
+     width: 7px;
+    height: 7px;
+
+    background: #FFFFFF;
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Botón para volver a la tienda */
+
+.desktopMenu .adminStoreButton {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 15px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f52b78, #bd1051);
+    border: 1px solid rgba(255, 173, 202, 0.4);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 4px 13px rgba(233, 22, 104, 0.2);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.desktopMenu .adminStoreButton::after {
+    display: none;
+}
+
+.desktopMenu .adminStoreButton:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff4387, #e91668);
+    box-shadow: 0 7px 20px rgba(233, 22, 104, 0.3);
+    transform: translateY(-2px);
+}
+
+.desktopMenu .adminStoreButton:active {
+    transform: scale(0.97);
+}
+
+/* ============================================
+   ACCIONES: BUSCADOR, CARRITO Y PERFIL
+   ============================================ */
+
+.actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 8px;
+}
+
+.iconButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    padding: 0;
+    color: #fed6d7;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    font-size: 20px;
+    cursor: pointer;
+    transition:
+        color 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease,
+        transform 0.22s ease;
+}
+
+.iconButton:hover {
+    color: #ff6c9d;
+    background: rgba(255, 214, 231, 0.08);
+    border-color: rgba(255, 214, 231, 0.16);
+    transform: translateY(-1px);
+}
+
+.iconButton:active {
+    transform: scale(0.94);
+}
+
+.userActive {
+    color: #ff4387 !important;
+    background: rgba(255, 24, 103, 0.1);
+}
+
+.cartLink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    padding: 0;
+    color: #687786;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    font-size: 23px;
+    text-decoration: none;
+    transition:
+        color 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease,
+        transform 0.22s ease;
+}
+
+.cartLink:hover {
+    color: #ff4387;
+    background: rgba(255, 214, 231, 0.08);
+    border-color: rgba(255, 214, 231, 0.16);
+    transform: translateY(-1px);
+}
+
+.cartBadge {
+    position: absolute;
+    top: -2px;
+    right: -3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+     color: #687786;
+    border: 2px solid #2c1113;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1;
+     background: #FF0057;
+    border-color: #FFD6D9;
+}
+
+/* ============================================
+   MENÚ DESPLEGABLE DEL USUARIO
+   ============================================ */
+
+.userMenuContainer {
+    position: relative;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: calc(100% + 11px);
+    right: 0;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    width: 245px;
+    max-width: calc(100vw - 24px);
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #ffd1dc;
+    border-radius: 16px;
+    box-shadow: 0 12px 34px rgba(60, 12, 32, 0.2);
+    animation: navDropdownIn 0.2s ease-out;
+}
+
+.dropdownHeader {
+    margin: 0 0 3px;
+    padding-bottom: 12px;
+    color: #77717a;
+    border-bottom: 1px solid #fce8ec;
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.dropdownHeader strong {
+    display: block;
+    margin-top: 3px;
+    color: #ff1867;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    color: #383039;
+    background: transparent;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.dropdownItem:hover {
+    color: #e91668;
+    background: #fff0f5;
+    transform: translateX(2px);
+}
+
+.dropdownLogout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    color: #c5394d;
+    background: #fff8f8;
+    border: 1px solid #fae4e7;
+    border-radius: 9px;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 750;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.dropdownLogout:hover {
+    background: #fff0f1;
+    border-color: #f4c9d0;
+}
+
+/* ============================================
+   BOTÓN DEL MENÚ MÓVIL
+   ============================================ */
+
+.menuButton {
+    display: flex;
+}
+
+/* ============================================
+   MENÚ MÓVIL
+   ============================================ */
+
+.mobileMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 15px 18px 18px;
+    box-shadow: 0 12px 22px rgba(36, 11, 23, 0.14);
+    animation: navMobileIn 0.22s ease-out;
+    background: #FFFFFF;
+    border-top: 1px solid #F7C3CC;
+}
+
+.mobileMenu > a:not(.mobileAdminButton):not(.mobileAdminStoreButton) {
+    display: block;
+    padding: 12px 14px;
+    color: #9c174e;
+    background: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 750;
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.mobileMenu > a:not(.mobileAdminButton):not(.mobileAdminStoreButton):hover {
+    padding-left: 14px;
+    color: #D9004B;
+    background: #FFF0F3;
+    border-color: #FFD0DA;
+    transform: translateX(3px);
+}
+
+/* ============================================
+   BOTONES ADMINISTRATIVOS PARA MÓVILES
+   ============================================ */
+
+.mobileMenu .mobileAdminButton,
+.mobileMenu .mobileAdminStoreButton {
+     display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 49px;
+    padding: 12px 14px;
+
+    color: #687786;
+    background: #FFFFFF;
+
+    border: 1px solid #F3B9CB;
+    border-radius: 12px;
+
+    font-size: 13px;
+    font-weight: 750;
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.mobileMenu .mobileAdminButton {
+    color: #702846;
+    background: #fff9fc;
+}
+
+.mobileMenu .mobileAdminButton:hover {
+     color: #FF0057;
+    background: #FFF0F4;
+    border-color: #FF8DB2;
+
+    transform: translateX(2px);
+}
+
+.mobileMenu .mobileAdminButtonActive {
+      color: #FFFFFF;
+
+    background: linear-gradient(135deg, #FF4387, #E60050);
+    border-color: #FF4387;
+
+    box-shadow: 0 4px 12px rgba(255, 0, 87, 0.17);
+
+    box-shadow:
+        inset 3px 0 0 #FFFFFF,
+        0 4px 12px rgba(255, 0, 87, 0.17);
+}
+
+.mobileMenu .mobileAdminButtonActive:hover {
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #F52570, #C90045);
+    border-color: #E60050;
+}
+
+.mobileAdminCheck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 23px;
+    height: 23px;
+    margin-left: auto;
+
+    color: #FF0057;
+    background: #FFFFFF;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.mobileMenu .mobileAdminStoreButton {
+    justify-content: center;
+    margin-top: 4px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f52b78, #bd1051);
+    border-color: #e91668;
+    box-shadow: 0 4px 12px rgba(233, 22, 104, 0.18);
+}
+
+.mobileMenu .mobileAdminStoreButton:hover {
+    padding-left: 14px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff4387, #e91668);
+    border-color: #ff8cb5;
+    box-shadow: 0 6px 17px rgba(233, 22, 104, 0.24);
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   BUSCADOR DESPLEGABLE
+   ============================================ */
+
+.searchContainer {
+    position: relative;
+}
+
+.searchDropdown {
+    position: absolute;
+    top: calc(100% + 11px);
+    right: 0;
+    z-index: 1100;
+    width: 340px;
+    max-width: calc(100vw - 24px);
+    padding: 13px;
+    background: #ffffff;
+    border: 1px solid #ffd1dc;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(50, 10, 28, 0.2);
+    animation: navDropdownIn 0.2s ease-out;
+}
+
+.searchInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 39px 12px 13px;
+    color: #333333;
+    background: #fcf9fb;
+    border: 1px solid #f1dce5;
+    border-radius: 10px;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.searchInput::placeholder {
+    color: #969098;
+}
+
+.searchInput:focus {
+    background: #ffffff;
+    border-color: #ff1867;
+    box-shadow: 0 0 0 3px rgba(255, 24, 103, 0.1);
+}
+
+.clearSearch {
+    position: absolute;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    color: #89818a;
+    background: transparent;
+    border: 0;
+    border-radius: 7px;
+    font-size: 19px;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.clearSearch:hover {
+    color: #ff1867;
+    background: #fff0f5;
+}
+
+.searchResultsList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: min(340px, 55vh);
+    margin-top: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.searchResultItem {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 9px;
+    background: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.searchResultItem:hover {
+    background: #fff4f8;
+    border-color: #f8dce7;
+}
+
+.searchResultImg {
+    display: block;
+    flex-shrink: 0;
+    width: 47px;
+    height: 47px;
+    object-fit: contain;
+    background: #ffffff;
+    border: 1px solid #f1e8ed;
+    border-radius: 8px;
+}
+
+.searchResultInfo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.searchResultName {
+    color: #383039;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.searchResultPrice {
+    color: #e91668;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.noResults {
+    margin: 0;
+    padding: 20px 8px;
+    color: #77717a;
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes navDropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes navMobileIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   ACCESIBILIDAD Y FOCO DE TECLADO
+   ============================================ */
+
+.header a:focus-visible,
+.header button:focus-visible {
+    outline: 2px solid #ff83af;
+    outline-offset: 3px;
+     outline-color: #FF0057;
+}
+
+.desktopMenu .adminNavButton:focus-visible,
+.desktopMenu .adminStoreButton:focus-visible,
+.mobileMenu .mobileAdminButton:focus-visible,
+.mobileMenu .mobileAdminStoreButton:focus-visible {
+    outline: 3px solid #ff83af;
+    outline-offset: 3px;
+}
+
+/* ============================================
+   TABLETAS Y ESCRITORIO
+   ============================================ */
+
+@media (min-width: 1100px) {
+    .mainNavContainer {
+        padding: 0 26px;
+    }
+
+    .navContent {
+        min-height: 82px;
+        gap: 18px;
+    }
+
+    .imgLogo {
+        height: 68px;
+    }
+
+    .desktopMenu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 19px;
+        min-width: 0;
+        color: #fed6d7;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+
+    .menuButton {
+        display: none;
+    }
+
+    .actions {
+        gap: 7px;
+    }
+}
+
+/* Ajustes de navegación en pantallas medianas */
+
+@media (min-width: 1100px) and (max-width: 1299px) {
+    .mainNavContainer {
+        padding: 0 18px;
+    }
+
+    .navContent {
+        gap: 12px;
+    }
+
+    .imgLogo {
+        height: 61px;
+        max-width: 145px;
+    }
+
+    .desktopMenu {
+        gap: 12px;
+    }
+
+    .desktopMenu:not(:has(.adminNavButton)) > a:not(.adminStoreButton) {
+        font-size: 0.69rem;
+    }
+
+    .desktopMenu .adminNavButton,
+    .desktopMenu .adminStoreButton {
+        gap: 7px;
+        padding: 9px 11px;
+        font-size: 11px;
+    }
+
+    .actions {
+        gap: 4px;
+    }
+
+    .iconButton,
+    .cartLink {
+        width: 35px;
+        height: 35px;
+         color: #687786;
+    }
+}
+
+/* ============================================
+   MÓVILES Y TABLETAS
+   ============================================ */
+
+@media (max-width: 1099px) {
+    .mainNavContainer {
+        padding: 0 18px;
+    }
+
+    .navContent {
+        min-height: 72px;
+        gap: 10px;
+    }
+
+    .imgLogo {
+        height: 54px;
+        max-width: 155px;
+    }
+
+    .desktopMenu {
+        display: none;
+    }
+
+    .menuButton {
+        display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+    .topBar {
+        min-height: 29px;
+        padding: 6px 10px;
+    }
+
+    .topBarText {
+        font-size: 0.64rem;
+        letter-spacing: 0.055em;
+        
+    }
+
+    .mainNavContainer {
+        padding: 0 12px;
+    }
+
+    .navContent {
+        min-height: 66px;
+        gap: 5px;
+    }
+
+    .imgLogo {
+        height: 48px;
+        max-width: 125px;
+    }
+
+    .actions {
+        gap: 2px;
+    }
+
+    .iconButton,
+    .cartLink {
+        width: 34px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .cartLink {
+        font-size: 21px;
+    }
+
+    .cartBadge {
+        top: 0;
+        right: -2px;
+        min-width: 17px;
+        height: 17px;
+        font-size: 8px;
+    }
+
+    .mobileMenu {
+        padding: 12px;
+        gap: 6px;
+        max-height: calc(100vh - 95px);
+        overflow-y: auto;
+    }
+
+    .mobileMenu > a:not(.mobileAdminButton):not(.mobileAdminStoreButton) {
+        padding: 11px 12px;
+        font-size: 12px;
+         color: #FF0057;
+    }
+
+    .mobileMenu .mobileAdminButton,
+    .mobileMenu .mobileAdminStoreButton {
+        min-height: 46px;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .mobileMenu .mobileAdminButton:hover,
+    .mobileMenu .mobileAdminStoreButton:hover {
+        padding-left: 12px;
+    }
+
+    .searchDropdown {
+        position: fixed;
+        top: 83px;
+        right: 12px;
+        left: 12px;
+        width: auto;
+        max-width: none;
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    .searchResultsList {
+        max-height: 55vh;
+    }
+
+    .dropdownMenu {
+        top: calc(100% + 9px);
+        right: -42px;
+        width: 235px;
+    }
+}
+
+@media (max-width: 360px) {
+    .mainNavContainer {
+        padding: 0 8px;
+    }
+
+    .imgLogo {
+        height: 43px;
+        max-width: 105px;
+    }
+
+    .actions {
+        gap: 0;
+    }
+
+    .iconButton,
+    .cartLink {
+        width: 31px;
+        height: 34px;
+        font-size: 17px;
+    }
+
+    .cartLink {
+        font-size: 20px;
+    }
+
+    .mobileMenu {
+        padding: 9px;
+    }
+
+    .searchDropdown {
+        right: 8px;
+        left: 8px;
+    }
+}
+
+/* ============================================
+   RESPETAR PREFERENCIAS DE MOVIMIENTO
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .header *,
+    .header *::before,
+    .header *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ============================================
+   ICONOS DEL NAVBAR - ESCRITORIO Y MÓVILES
+   ============================================ */
+
+/* Buscador, perfil y botón del menú móvil */
+.header .iconButton,
+.header .menuButton,
+.header .cartLink {
+    color: #687786;
+    background: transparent;
+    border-color: transparent;
+}
+
+/* Color de los iconos SVG */
+.header .iconButton svg,
+.header .menuButton svg,
+.header .cartLink svg {
+    color: #687786;
+}
+
+/* Hover */
+.header .iconButton:hover,
+.header .menuButton:hover,
+.header .cartLink:hover {
+    color: #FF0057;
+    background: rgba(255, 0, 87, 0.07);
+    border-color: rgba(255, 0, 87, 0.12);
+}
+
+/* SVG al pasar el cursor */
+.header .iconButton:hover svg,
+.header .menuButton:hover svg,
+.header .cartLink:hover svg {
+    color: #FF0057;
+}
+
+/* Usuario activo */
+.header .userActive {
+    color: #FF0057 !important;
+    background: rgba(255, 0, 87, 0.08);
+}
+
+/* Contador del carrito */
+.header .cartBadge {
+    color: #FFFFFF;
+    background: #FF0057;
+    border: 2px solid #FFD6D9;
+}
+
+/* Asegurar colores en móviles */
+@media (max-width: 1099px) {
+    .header .iconButton,
+    .header .menuButton,
+    .header .cartLink {
+        color: #687786;
+    }
+
+    .header .iconButton svg,
+    .header .menuButton svg,
+    .header .cartLink svg {
+        color: #687786;
+    }
+}
+
+
+
+/* ============================================
+   INDICADOR DE SESIÓN INICIADA
+   GLAM REEBEL
+============================================ */
+
+.header .userLoggedButton.userActive {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    width: auto;
+    min-width: 105px;
+    height: 42px;
+    padding: 0 16px;
+
+    color: #FFFFFF !important;
+
+    background: linear-gradient(
+        135deg,
+        #FF4387,
+        #E60050
+    );
+
+    border: 1px solid #FF4387;
+    border-radius: 30px;
+
+    box-shadow: 0 4px 12px rgba(255, 0, 87, 0.2);
+
+    transition: all 0.25s ease;
+}
+
+.header .userLoggedButton.userActive svg {
+    flex-shrink: 0;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.userLoggedText {
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.userLoggedIndicator {
+    position: absolute;
+    top: 1px;
+    right: 2px;
+
+    width: 10px;
+    height: 10px;
+
+    background: #15965A;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 2px rgba(21, 150, 90, 0.15);
+}
+
+.header .userLoggedButton.userActive:hover {
+    color: #FFFFFF !important;
+
+    background: linear-gradient(
+        135deg,
+        #F52570,
+        #C90045
+    );
+
+    border-color: #C90045;
+    box-shadow: 0 6px 16px rgba(255, 0, 87, 0.25);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   CONFIRMACIÓN EN EL MENÚ DE USUARIO
+============================================ */
+
+.loginStatus {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 7px;
+
+    margin-bottom: 8px;
+    padding: 6px 9px;
+
+    color: #187544;
+    background: #EAF9F0;
+
+    border: 1px solid #C6EAD3;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.loginStatus svg {
+    font-size: 13px;
+    color: #15965A;
+}
+
+/* ============================================
+   RESPONSIVE — MÓVILES
+============================================ */
+
+@media (max-width: 600px) {
+    .header .userLoggedButton.userActive {
+        width: 36px;
+        min-width: 36px;
+        height: 36px;
+        padding: 0;
+
+        border-radius: 11px;
+    }
+
+    .userLoggedText {
+        display: none;
+    }
+
+    .userLoggedIndicator {
+        top: -2px;
+        right: -2px;
+    }
+}
